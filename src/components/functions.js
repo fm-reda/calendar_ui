@@ -3,6 +3,7 @@ export const stringTodate = str => {
   return new Date(str);
 };
 export const eventSortedByDate = events => {
+//   console.log(events);
   const sortByMapped = (map, compareFn) => (a, b) => compareFn(map(a), map(b));
   const byValue = (a, b) => a - b;
   const toDate = e => new Date(e.startRecur);
@@ -14,6 +15,7 @@ export const eventSortedByDate = events => {
   });
   return eventNow;
 };
+
 //convert time to AM/PM
 export const convertTimeAmPm = date => {
   return new Date(date).toLocaleString("en-US", {
@@ -61,15 +63,3 @@ export const createTime = (stringStartDate, stringEndDate) => {
     return `${recurDay} - ${endDay}`;
   }
 };
-
-// return axios
-// .post(url + "api/v1/register", newUser, {
-//   headers: { "content-type": "application/json" },
-// })
-// .then((res) => {
-//   console.log(res);
-//   return res;
-// })
-// .catch((err) => {
-//   console.log(err);
-// });

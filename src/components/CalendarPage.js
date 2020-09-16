@@ -1,39 +1,29 @@
 import React, { useState, useEffect } from "react";
 import CalendarElem from "./CalendarElem";
-// @ts-ignore
-import events from "./events.json";
-
 import {
   eventSortedByDate,
   createMonth,
   createDay,
-  convertTimeAmPm,
-  stringTodate
+  convertTimeAmPm
+  // stringTodate
 } from "./functions";
 
 const CalendarPage = () => {
   const [latestEvents, setLatestEvents] = useState([]);
+  const [eventsJson, setEventsJson] = useState([]);
+
+  //load json and sort datas
   useEffect(() => {
-    console.log("rrr");
-    // console.log(events);
-    fetch("events.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      }
-    })
-      .then(response => console.log(response.json()))
-      .then(json => console.log(json));
-    // console.log(eventNow);
-
-    // console.log(eventSortedByDate(events));
-
-    //load sorted last events
-    setLatestEvents(eventSortedByDate(events));
+    fetch("./events.json")
+      .then(res => res.json())
+      .then(data => {
+        setEventsJson(data);
+        setLatestEvents(eventSortedByDate(data));
+      });
   }, []);
 
   return (
-    <div className=" ">
+    <div className=" p-b-200" >
       <div className="calendar-header m-b-36">
         <div className="header-title">Calendar</div>
         <div className="header-description">
@@ -59,7 +49,7 @@ const CalendarPage = () => {
                     item.endRecur
                   )} `}
                 </div>
-                <div className="event-local">{item.location}</div>
+                <div className="event-local">@ {item.location}</div>
               </div>
             ))}
           </div>
@@ -69,8 +59,8 @@ const CalendarPage = () => {
         {/* start section calendar  */}
         <div className="section-events p-24">
           <div className="main-heading mb">My Calendar</div>
-          <div>
-            <CalendarElem />
+          <div className="">
+            <CalendarElem eventsJson={eventsJson} />
           </div>
         </div>
         {/* end section calendar  */}

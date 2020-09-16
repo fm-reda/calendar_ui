@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-// @ts-ignore
-import events from "./events.json";
-// import { eventSortedByDate } from "./functions";
 
-// import "./main.css";
+const CalendarElem = props => {
+  const { eventsJson } = props;
 
-const CalendarElem = () => {
   return (
     <FullCalendar
       plugins={[dayGridPlugin]}
@@ -20,7 +17,7 @@ const CalendarElem = () => {
       // headerToolbar={false}
       initialView="dayGridMonth"
       displayEventEnd={true}
-      events={events}
+      events={eventsJson}
       dayHeaderFormat={{ weekday: "long" }}
       firstDay={1}
       eventContent={renderEventContent}
