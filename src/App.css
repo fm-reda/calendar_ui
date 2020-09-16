@@ -1,38 +1,281 @@
-.App {
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("/Inter/Inter-VariableFont_slnt\,wght.ttf") format("ttf"),
+    url("/Inter/static/Inter-Black-slnt=0.ttf") format("ttf"),
+    url("/Inter/static/Inter-Bold-slnt=0.ttf") format("ttf"),
+    url("/Inter/static/Inter-Regular-slnt=0.ttf") format("ttf"),
+    url("/Inter/static/Inter-ExtraBold-slnt=0.ttf") format("ttf");
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: #f3f4f6;
+  margin: auto;
+}
+.container {
+  width: 1150px;
+  margin: auto;
+  background: #fff;
+}
+.section-m {
+  margin-top: -200px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: #e1e7ef;
+  border-radius: 50%;
+}
+
+/* header section */
+.header {
+  padding: 8px 0;
+  background: #fff;
+  height: 73px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.06);
+}
+.user-name {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #48566a;
+}
+.user-role {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  color: #65758b;
+}
+
+/* navbar section */
+.navbar {
+  height: 328px;
+  background: #fff;
+  padding: 1rem;
+}
+.nav a {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: #48566a;
+  margin-right: 40px;
+  /* padding: 0.5rem; */
+  text-decoration: none;
+  background-color: transparent;
+}
+.active {
+  color: #1c64f2 !important;
+}
+
+/* Calendar page */
+.header-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #27303f;
+}
+.header-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #48566a;
+}
+.main-calendar {
+  border: 1px solid #f1f5f9;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.main-heading {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: #48566a;
+}
+
+.event-day {
+  font-size: 36px;
+  line-height: 150%;
+  color: #27303f;
+}
+.event-month {
+  font-size: 14px;
+  line-height: 150%;
+  color: #65758b;
+}
+.event-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  color: #364253;
+}
+
+.event-time {
+  font-size: 12px;
+  line-height: 15px;
+  color: #1c64f2;
+}
+
+.event-local {
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #48566a;
+}
+
+/* lib css */
+/*  */
+/*  */
+
+/* flex */
+.dis-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-sp-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col-event {
+  width: 22.8%;
+  /* border: 1px solid #111; */
+  margin-right: 24px;
+  background: #fbfdfe;
+  border-radius: 4px;
+}
+.col-event:hover {
+  border: 1px solid #1c64f2;
+}
+
+/* margin */
+.m-b-2 {
+  margin-bottom: 2px;
+}
+.m-b-14 {
+  margin-bottom: 14px;
+}
+.m-b-20 {
+  margin-bottom: 20px;
+}
+.m-b-28 {
+  margin-bottom: 28px;
+}
+.m-b-38 {
+  margin-bottom: 38px;
+}
+.m-b-36 {
+  margin-bottom: 36px;
+}
+/* padding */
+.p-l-0 {
+  padding-left: 0;
+}
+.p-r-0 {
+  padding-right: 0;
+}
+.p-16 {
+  padding: 16px;
+}
+.p-24 {
+  padding: 24px;
+}
+.px-12 {
+  padding: 0px 12px;
+}
+.p-l-24 {
+  padding-left: 24px;
+}
+.p-r-33 {
+  padding-right: 33px;
+}
+/* font-size */
+/* color */
+.white-c {
+  color: #fff;
+}
+
+/* ------------ Custom Calendar Changes ------------ / */
+.fc-toolbar-chunk > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* / Arrow buttons */
+.fc-button-primary {
+  color: black !important;
+  background: transparent !important;
+  border: transparent !important;
+  padding: 40px;
+}
+
+.fc .fc-button-primary:hover {
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  margin: 0;
+  min-width: 250px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fc .fc-bg-event {
+  /* background: rgb(143, 223, 130); */
+  /* background: var(--fc-bg-event-color, rgb(143, 223, 130)); */
+  /* opacity: none !important; */
+  opacity: inherit !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .t-align {
+  text-align: center;
+  padding: 10px;
+} */
+.content-center {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* .text-that-needs-wrapping {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+} */
+
+.text-that-needs-wrapping {
+  overflow-wrap: anywhere;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.hyphens {
+  /* -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; */
+  margin: 0;
 }
