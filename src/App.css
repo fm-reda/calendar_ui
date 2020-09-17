@@ -240,17 +240,31 @@ body {
 }
 
 .content-center {
-  display: block;
+  /* display: block;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.text-that-needs-wrapping {
-  overflow-wrap: anywhere;
+  transform: translate(-50%, -50%); */
 }
 
 .hyphens {
   margin: 0;
+}
+.t-align {
+  text-align: center;
+  word-break: break-all;
+}
+.mh {
+  min-height: 20px;
+}
+
+.fc .fc-bg-event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc .fc-day-other .fc-daygrid-day-top {
+  opacity: 1 !important;
+  color: #c4c4c4;
 }

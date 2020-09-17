@@ -41,7 +41,7 @@
     "startRecur": "2020-09-23T08:30:00",
     "endRecur": "2020-09-23T18:30:00",
     "display": "background",
-    "color": "#219653",
+    "color": "#ACE456",
     "location": "LaStartupFactory Office"
   },
   {
@@ -61,5 +61,15 @@
     "display": "background",
     "color": "#EE5567",
     "location": "New Location"
+  },
+  {
+    "groupId": "ev8",
+    "title": "October Event ",
+    "startRecur": "2020-10-01T08:30:00",
+    "endRecur": "2020-10-01T18:30:00",
+    "display": "background",
+    "color": "#ff0000",
+    "location": "New Location",
+    "allDay": "false"
   }
 ]

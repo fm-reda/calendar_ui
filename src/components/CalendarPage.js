@@ -12,7 +12,7 @@ const CalendarPage = () => {
   const [latestEvents, setLatestEvents] = useState([]);
   const [eventsJson, setEventsJson] = useState([]);
 
-  //load json and sort datas
+  //load json from folder PUBLIC and sort datas
   useEffect(() => {
     fetch("./events.json")
       .then(res => res.json())
@@ -23,7 +23,7 @@ const CalendarPage = () => {
   }, []);
 
   return (
-    <div className=" p-b-200" >
+    <div className=" p-b-200">
       <div className="calendar-header m-b-36">
         <div className="header-title">Calendar</div>
         <div className="header-description">
@@ -35,6 +35,8 @@ const CalendarPage = () => {
         <div className="section-events p-24">
           <div className="main-heading m-b-20">Upcoming Events</div>
           <div className="dis-flex p-r-0 m-b-30">
+            
+            {/* maping latest event  */}
             {latestEvents.slice(0, 3).map((item, index) => (
               <div key={index} className="col-event p-16">
                 <div className="event-day">
@@ -52,6 +54,8 @@ const CalendarPage = () => {
                 <div className="event-local">@ {item.location}</div>
               </div>
             ))}
+            {/* end maping */}
+
           </div>
         </div>
         {/* end section events */}

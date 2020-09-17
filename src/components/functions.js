@@ -3,7 +3,6 @@ export const stringTodate = str => {
   return new Date(str);
 };
 export const eventSortedByDate = events => {
-//   console.log(events);
   const sortByMapped = (map, compareFn) => (a, b) => compareFn(map(a), map(b));
   const byValue = (a, b) => a - b;
   const toDate = e => new Date(e.startRecur);
@@ -52,11 +51,11 @@ export const createTime = (stringStartDate, stringEndDate) => {
   const recurDay = new Date(stringStartDate).toLocaleString("en-US", {
     day: "numeric"
   });
-  console.log("recuday" + recurDay);
+
   const endDay = new Date(stringEndDate).toLocaleString("en-US", {
     day: "numeric"
   });
-  console.log("endday" + endDay);
+
   if (recurDay === endDay) {
     return recurDay;
   } else {

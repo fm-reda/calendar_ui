@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
 const CalendarElem = props => {
   const { eventsJson } = props;
+
 
   return (
     <FullCalendar
@@ -31,8 +32,8 @@ function renderEventContent(eventInfo) {
   // console.log(eventInfo);
   return (
     <>
-      <div className="content-center">
-        <i className="t-align white-c hyphens">{eventInfo.event.title}</i>
+      <div className="content-center t-align">
+        <i className=" white-c hyphens mh t-align">{eventInfo.event.title}</i>
       </div>
       {/* <b>{eventInfo.timeText}</b> */}
     </>
